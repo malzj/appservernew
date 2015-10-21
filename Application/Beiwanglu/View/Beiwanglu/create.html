@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>规划宝后台管理系统</title>
+    <meta charset="utf-8"/>
+    <!-- Bootstrap core CSS -->
+    <link href="__PUBLIC__/guihuabao/css/bootstrap.min.css" rel="stylesheet">
+    <style rel="stylesheet">
+        *{margin:0;padding:0;}
+        a{text-decoration: none;}
+        a:hover{text-decoration: none;cursor: pointer;}
+        body{width:100%;height:200px;}
+        .header-1{color:#fff;font-size: 20px;width:100%;height:40px;background-color:#03a9f5;border-shadow:3px 1px 3px #000;-webkit-box-shadow:0 1px 3px #b4b4b4;z-index:100;position:relative; }
+        .header-1 a{color:#fff;display:inline-block;font-size: 20px;line-height: 40px;position:absolute;top:0px;left:20px;}
+        .header-1 span{margin:0 auto;display: inline-block;width:100%;height:40px;text-align: center;line-height: 40px;}
+        .nav-1{width:100%;height:54px;background-color:#f0f0f0;border-bottom:1px solid #dcdcdc;overflow: hidden;}
+        .nav-1 .page{border:2px solid #03a9f5;border-radius: 5px;width:50%;height:36px;margin:9px auto;overflow: hidden;}
+        .nav-1 .page a{display: inline-block;width:50%;height:100%;text-align: center;color:#03a9f5;background-color: #fff;line-height: 36px;}
+        .nav-1 .page #prev{border-right:1px solid #03a9f5;}
+        .content-1{width:100%;padding:10px;}
+        .content-1 img{width:100%;height:100%;}
+        .disabled {pointer-events: none; color:#B9C1C5!important; }
+    </style>
+</head>
+
+<body>
+
+<section id="container" >
+    <!--header start-->
+    <include file="header" />
+
+
+    <!--header end-->
+    <!--sidebar start-->
+    <include file="siderbar" />
+    <!--sidebar end-->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper mt80">
+            <form class="form-horizontal tasi-form" action="{:U('Beiwanglu/beiwangluAdd')}" method="post"  enctype= "multipart/form-data">
+
+                <div class="hxzs_heading clearfix">
+
+                    <h2>新建</h2>
+                    <a href="{:U('Beiwanglu/index',array('cid'=>$_SESSION['cid'],'uid'=>$_SESSION['uid'],'companyappid'=>$_SESSION['companyappid']))}" class="btn btn-info" style="display:block;float:right;">返回列表</a>
+
+                    <button type="submit" class="btn btn-info f-r">保存</button>
+
+
+                </div>
+                <!--<g:hiddenField name="toolId" value="${toolId}"></g:hiddenField>-->
+                <div class="mt25">
+                    <div class="form-group">
+                        <label class="col-lg-3 col-sm-3 control-label">标题：</label>
+                        <div class="col-lg-10">
+                            <input class="form-control" type="text" name="title" />
+                        </div>
+                    </div>
+                    <div class="textarea">
+                        <textarea  name="content" style="width:100%;height:500px;"></textarea>
+                    </div>
+
+                </div>
+            </form>
+        </section>
+        <!--main content end-->
+    </section>
+
+  </section>
+</body>
+</html>
